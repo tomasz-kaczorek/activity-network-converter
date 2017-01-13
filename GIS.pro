@@ -23,14 +23,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp \
+SOURCES += main.cpp \
+    mainwindow.cpp \
     graphicsedge.cpp \
     graphicsvertex.cpp \
     engine.cpp \
     vertex.cpp \
     graph.cpp \
-    edge.cpp
+    edge.cpp \
+    newdialog.cpp
 
 HEADERS  += mainwindow.h \
     graphicsedge.h \
@@ -38,4 +39,5 @@ HEADERS  += mainwindow.h \
     engine.h \
     vertex.h \
     graph.h \
-    edge.h
+    edge.h \
+    newdialog.h
