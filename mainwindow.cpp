@@ -11,6 +11,7 @@
 #include <QGraphicsView>
 #include <QMenu>
 #include <QMenuBar>
+#include <QResizeEvent>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -29,8 +30,8 @@ MainWindow::MainWindow(QWidget *parent)
         QAction * saveAction = new QAction("Save...");
         QMenu * fileMenu = menuBar()->addMenu(tr("File"));
         fileMenu->addAction(newAction);
-        fileMenu->addAction(openAction);
-        fileMenu->addAction(saveAction);
+        //fileMenu->addAction(openAction);
+        //fileMenu->addAction(saveAction);
 
         QAction * runAction = new QAction("Run");
         QAction * showInputAction = new QAction("Show input");
@@ -58,7 +59,12 @@ QPointF MainWindow::vertexPos(int id, int size)
         QTransform transform;
         transform.translate(mScene->width() / 2.0, mScene->height() / 2.0);
         transform.rotate(-360.0 * id / size);
-        return transform.map(QPointF(qMin(mScene->width() / 2.0, mScene->height() / 2.0) - 5.0, 0.0));
+        return transform.map(QPointF(qMin(mScene->width() / 2.0, mScene->height() / 2.0) - 20.0, 0.0));
+}
+
+void MainWindow::resizeEvent(QResizeEvent *)
+{
+        mView->fitInView(mScene->sceneRect(), Qt::KeepAspectRatio);
 }
 
 void MainWindow::newAction()

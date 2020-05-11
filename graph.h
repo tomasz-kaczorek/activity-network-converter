@@ -9,7 +9,6 @@
 struct Graph
 {
         Graph(int mVertices = 0);
-        Graph(QString input);
 
         operator QString() const;
 

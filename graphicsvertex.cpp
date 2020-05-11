@@ -15,6 +15,7 @@ GraphicsVertex::GraphicsVertex(QPointF pos, QString label)
         else
         {
                 mLabel = new QGraphicsSimpleTextItem(label, this);
+                mLabel->setFont(QFont("Halvetica", 15));
                 mLabel->setPos(-mLabel->boundingRect().width() / 2.0, 5.0);
         }
         setZValue(1.0);

@@ -19,7 +19,7 @@ class MainWindow : public QMainWindow
                 ~MainWindow();
 
                 QPointF vertexPos(int id, int size);
-
+                void resizeEvent(QResizeEvent * resizeEvent);
         public slots:
                 void newAction();
                 void openAction();

@@ -1,5 +1,6 @@
 #include "graphicsedge.h"
 
+#include <QFont>
 #include <QGraphicsSimpleTextItem>
 #include <QPainter>
 
@@ -14,6 +15,7 @@ GraphicsEdge::GraphicsEdge(QLineF line, QString label) :
         {
                 mLabel = new QGraphicsSimpleTextItem(label, this);
                 mLabel->setPos(line.pointAt(0.5) - mLabel->boundingRect().center());
+                mLabel->setFont(QFont("Halvetica", 15));
         }
         setPen(QPen(Qt::gray, 2.0, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
         setZValue(0.0);
